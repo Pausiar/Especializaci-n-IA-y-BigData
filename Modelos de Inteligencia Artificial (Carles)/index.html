@@ -27,7 +27,7 @@
     <section class="subject-hero container" aria-labelledby="asignatura-titulo">
       <div class="subject-hero__content">
         <h1 id="asignatura-titulo">Modelos de Inteligencia Artificial</h1>
-        <p class="lead">Aquí se reunirán los apuntes y ejercicios de la asignatura.</p>
+        <p class="lead">Resúmenes y test autocorregible de los puntos 0 a 3 del primer trimestre.</p>
       </div>
       <div class="subject-hero__aside">
         <p class="byline">Profesor: <strong>Carles</strong></p>
@@ -56,9 +56,141 @@
           </ol>
         </div>
         <div class="subject-body__topics">
-          <h2>Temas de la asignatura</h2>
-          <p>Todavía no hay contenido publicado.</p>
-          <p class="fill" data-fill="course-topics">Añade aquí el primer tema y sus apuntes de Modelos de Inteligencia Artificial.</p>
+          <div class="topics-intro">
+            <p class="eyebrow">Primer trimestre · puntos 0–3</p>
+            <h2>Resumen y práctica</h2>
+            <p>Una visión rápida de cada bloque y 100 preguntas para comprobar lo aprendido.</p>
+          </div>
+
+          <section class="study-section" aria-labelledby="resumenes-titulo">
+            <div class="section-heading">
+              <h2 id="resumenes-titulo">Resúmenes</h2>
+              <p>Elaborados a partir de los apuntes en español de <a href="https://github.com/lawer/mia/tree/main/apunts/1.-primer_trimestre">lawer/mia</a>. Abre cada punto para repasarlo.</p>
+            </div>
+
+            <div class="summary-list">
+              <details class="summary-card" open>
+                <summary>
+                  <span class="summary-card__number">00</span>
+                  <span>IA responsable, segura y centrada en las personas</span>
+                </summary>
+                <div class="summary-card__body">
+                  <ul>
+                    <li>Antes de usar IA, define el propósito, las personas afectadas y la alternativa de referencia; decides probar, limitar o no desplegar.</li>
+                    <li>Minimiza los datos, separa los datos de contacto y distingue seudonimización, anonimización y datos sintéticos.</li>
+                    <li>Busca sesgos en la muestra, las etiquetas, las variables indirectas y el uso; compara métricas por grupo antes de mirar la media.</li>
+                    <li>Con «urgente» como positivo, un FN retrasa una urgencia y un FP puede desplazar otras peticiones. Acierto, detección y precisión positiva responden preguntas distintas.</li>
+                    <li>Prueba con ejemplos separados del entrenamiento, idiomas y casos poco frecuentes; repite las pruebas si cambian modelo, datos o contexto.</li>
+                    <li>La supervisión humana necesita información, tiempo, formación y permiso para corregir o anular; aprobar sin revisar es sesgo de automatización.</li>
+                    <li>RAG no garantiza la verdad: verifica las fuentes. Trata documentos y peticiones como datos no fiables y aplica mínimo privilegio.</li>
+                    <li>Ante un incidente: contiene, avisa, conserva pruebas, corrige, investiga y autoriza la reanudación. La revisión humana no elimina obligaciones normativas.</li>
+                  </ul>
+                  <a class="source-link" href="https://github.com/lawer/mia/tree/main/apunts/1.-primer_trimestre/0.-IA%20responsable">Ver apuntes del punto 0</a>
+                </div>
+              </details>
+
+              <details class="summary-card">
+                <summary>
+                  <span class="summary-card__number">01</span>
+                  <span>Introducción y fundamentos de la IA</span>
+                </summary>
+                <div class="summary-card__body">
+                  <ul>
+                    <li>Un agente percibe con sensores y actúa con actuadores; uno racional busca maximizar el rendimiento esperado con la información disponible.</li>
+                    <li>La historia incluye a Turing, Dartmouth, el perceptrón, los inviernos de la IA, Deep Blue, Roomba, Watson, AlphaGo y los modelos generativos recientes.</li>
+                    <li>IA estrecha, AGI e IA fuerte son conceptos distintos. Un buen rendimiento en una tarea no demuestra conciencia ni inteligencia general.</li>
+                    <li>La racionalidad considera resultados, probabilidades, costes y restricciones; no significa omnisciencia.</li>
+                    <li>Los paradigmas simbólico, conexionista y estadístico se solapan: reglas y símbolos, redes con pesos y modelos probabilísticos.</li>
+                    <li>Las técnicas incluyen sistemas expertos, reglas, casos, lógica difusa, redes neuronales, algoritmos genéticos, multiagente, búsqueda, planificación y aprendizaje.</li>
+                    <li>Aprendizaje supervisado usa respuestas etiquetadas; no supervisado busca estructura; por refuerzo aprende a partir de recompensas.</li>
+                    <li>Aplicaciones como robótica, PLN, visión, recomendación y juegos deben evaluarse según la tarea, los datos, las condiciones y sus límites.</li>
+                  </ul>
+                  <a class="source-link" href="https://github.com/lawer/mia/tree/main/apunts/1.-primer_trimestre/1.-Introducci%C3%B3">Ver apuntes del punto 1</a>
+                </div>
+              </details>
+
+              <details class="summary-card">
+                <summary>
+                  <span class="summary-card__number">02</span>
+                  <span>Conceptos previos</span>
+                </summary>
+                <div class="summary-card__body">
+                  <ul>
+                    <li>Un grafo une nodos con aristas; puede ser ponderado, dirigido o cíclico. DAG, grafo completo, conexo e isomorfo son propiedades diferentes.</li>
+                    <li>Euler resolvió el problema de los puentes de Königsberg; un grafo euleriano tiene todos sus nodos de grado par.</li>
+                    <li>La matriz de adyacencia ocupa O(n²) y comprueba aristas en O(1); la lista ocupa O(n + m) y es preferible para grafos dispersos o cambiantes.</li>
+                    <li>Los grafos sirven para recorridos, conectividad, ciclos, coloración, ordenación topológica, caminos mínimos, expansión mínima y flujo máximo.</li>
+                    <li>Un árbol es conexo, acíclico, no dirigido y tiene un único camino entre nodos. En un BST, izquierda contiene valores menores y derecha mayores.</li>
+                    <li>Un vector da acceso O(1); una lista enlazada facilita inserciones y eliminaciones. Cola es FIFO, pila es LIFO y prioridad suele usar un heap.</li>
+                    <li>Complejidad temporal mide tiempo y espacial memoria. O grande es cota superior, Omega inferior y Theta ambas.</li>
+                    <li>Ejemplos: acceso a vector O(1), búsqueda binaria O(log n), recorrido O(n), mergesort O(n log n), matriz O(n²), Hanói O(2ⁿ) y viajante por fuerza bruta O(n!).</li>
+                  </ul>
+                  <a class="source-link" href="https://github.com/lawer/mia/tree/main/apunts/1.-primer_trimestre/2.-Conceptes%20previs">Ver apuntes del punto 2</a>
+                </div>
+              </details>
+
+              <details class="summary-card">
+                <summary>
+                  <span class="summary-card__number">03</span>
+                  <span>Búsqueda en espacios de estados</span>
+                </summary>
+                <div class="summary-card__body">
+                  <ul>
+                    <li>Un problema define estado inicial, función sucesora con costes y estado objetivo; la solución es una secuencia de estados o plan.</li>
+                    <li>Rumanía usa ciudades como estados; las jarras usan cantidades de agua; el puzle del 8 usa posiciones y tiene 9! = 362.880 estados.</li>
+                    <li>La frontera guarda estados pendientes, comienza con el inicial y los padres permiten reconstruir el camino; hay que controlar repeticiones y ciclos.</li>
+                    <li>Se comparan completitud, optimalidad, complejidad temporal y espacial.</li>
+                    <li>Anchura usa FIFO, explora por niveles y es óptima con costes unitarios; profundidad usa LIFO y no garantiza optimalidad.</li>
+                    <li>Profundidad limitada fija un máximo; la iterativa aumenta el límite desde cero. Coste uniforme ordena por coste acumulado y usa prioridad.</li>
+                    <li>Una heurística estima el coste restante. La búsqueda voraz usa solo h(n) y puede perder optimalidad.</li>
+                    <li>A* ordena por f(n) = g(n) + h(n): coste acumulado más estimación. g es el coste real; f solo ordena.</li>
+                    <li>Una heurística admisible no sobreestima. Manhattan es más informativa que fichas fuera de lugar en el puzle del 8; en grafos también importa la consistencia.</li>
+                    <li>A* ponderado aumenta el peso de h y puede explorar menos perdiendo optimalidad; A* iterativo reduce memoria y Anytime A* mejora la solución progresivamente.</li>
+                  </ul>
+                  <a class="source-link" href="https://github.com/lawer/mia/tree/main/apunts/1.-primer_trimestre/3.-B%C3%BAsqueda%20en%20espai%20d%27estats">Ver apuntes del punto 3</a>
+                </div>
+              </details>
+            </div>
+          </section>
+
+          <section class="quiz" id="test" aria-labelledby="test-titulo">
+            <div class="section-heading">
+              <p class="eyebrow">100 preguntas · 25 por tema</p>
+              <h2 id="test-titulo">Test de repaso</h2>
+              <p>Elige una respuesta, compruébala y continúa. Puedes practicar un tema concreto o hacer el test completo.</p>
+            </div>
+
+            <div class="quiz__toolbar">
+              <label for="filtro-tema">Tema</label>
+              <select id="filtro-tema">
+                <option value="todos">Todos los temas</option>
+                <option value="0">0 · IA responsable</option>
+                <option value="1">1 · Introducción y fundamentos</option>
+                <option value="2">2 · Conceptos previos</option>
+                <option value="3">3 · Búsqueda en espacios de estados</option>
+              </select>
+              <p id="progreso-test" class="quiz__progress"></p>
+            </div>
+
+            <p id="puntuacion-test" class="quiz__score" role="status" aria-live="polite"></p>
+
+            <form id="formulario-test" class="quiz__form">
+              <fieldset class="quiz__fieldset">
+                <legend id="pregunta-test"></legend>
+                <p id="tema-pregunta" class="quiz__topic"></p>
+                <div id="opciones-test" class="quiz__options"></div>
+              </fieldset>
+              <p id="feedback-test" class="quiz__feedback" role="status" aria-live="polite"></p>
+              <div class="quiz__actions">
+                <button class="button button--secondary" id="anterior-test" type="button">Anterior</button>
+                <button class="button" id="comprobar-test" type="button">Comprobar</button>
+                <button class="button button--secondary" id="siguiente-test" type="button">Siguiente</button>
+              </div>
+            </form>
+
+            <button class="button button--secondary" id="reiniciar-test" type="button">Reiniciar test</button>
+            <noscript><p class="quiz__feedback">Activa JavaScript para responder y corregir el test.</p></noscript>
+          </section>
         </div>
       </div>
     </section>
@@ -70,5 +202,6 @@
       <a class="footer-link" href="https://github.com/Pausiar/Especializaci-n-IA-y-BigData">Ver el repositorio</a>
     </div>
   </footer>
+  <script src="test.js"></script>
 </body>
 </html>
