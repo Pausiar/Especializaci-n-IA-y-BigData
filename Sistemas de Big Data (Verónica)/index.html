@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Espacio de repaso de Sistemas de Big Data, asignatura de Verónica.">
+  <meta name="description" content="Resúmenes y test autocorregible de Sistemas de Big Data, asignatura de Verónica.">
   <title>Sistemas de Big Data, Verónica | Repaso</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -27,7 +27,7 @@
     <section class="subject-hero container" aria-labelledby="asignatura-titulo">
       <div class="subject-hero__content">
         <h1 id="asignatura-titulo">Sistemas de Big Data</h1>
-        <p class="lead">Aquí se reunirán los apuntes y ejercicios de la asignatura.</p>
+        <p class="lead">Resúmenes y test autocorregible de los cinco documentos de la asignatura.</p>
       </div>
       <div class="subject-hero__aside">
         <p class="byline">Profesora: <strong>Verónica</strong></p>
@@ -56,9 +56,145 @@
           </ol>
         </div>
         <div class="subject-body__topics">
-          <h2>Temas de la asignatura</h2>
-          <p>Todavía no hay contenido publicado.</p>
-          <p class="fill" data-fill="course-topics">Añade aquí el primer tema y sus apuntes de Sistemas de Big Data.</p>
+          <div class="topics-intro">
+            <p class="eyebrow">Curso 2026/27 · cinco documentos</p>
+            <h2>Resumen y práctica</h2>
+            <p>Una visión rápida de cada documento y 100 preguntas para comprobar lo aprendido.</p>
+          </div>
+
+          <section class="study-section" aria-labelledby="resumenes-titulo">
+            <div class="section-heading">
+              <h2 id="resumenes-titulo">Resúmenes</h2>
+              <p>Elaborados a partir de los cinco PDFs de Sistemas de Big Data. Abre cada documento para repasarlo.</p>
+            </div>
+
+            <div class="summary-list">
+              <details class="summary-card" open>
+                <summary>
+                  <span class="summary-card__number">01</span>
+                  <span>Introducción a Big Data</span>
+                </summary>
+                <div class="summary-card__body">
+                  <ul>
+                    <li>El Big Data es una necesidad competitiva: permite aprovechar grandes volúmenes de información para mejorar decisiones y procesos.</li>
+                    <li>Las bases relacionales y SQL no bastan cuando cambian los tipos de datos y crecen los volúmenes.</li>
+                    <li>Los datos pueden proceder de personas, máquinas (M2M), biometría y marketing o transacciones.</li>
+                    <li>Volumen, velocidad y variedad son las tres primeras V; veracidad y valor completan las 5V; visualización y viralidad amplían el modelo a las 7V.</li>
+                    <li>El sistema se organiza en cuatro capas: adquisición, procesamiento o transformación, almacenamiento distribuido y análisis o visualización.</li>
+                    <li>El objetivo es recoger, almacenar, procesar, analizar y visualizar datos para convertirlos en información útil.</li>
+                  </ul>
+                </div>
+              </details>
+
+              <details class="summary-card">
+                <summary>
+                  <span class="summary-card__number">02</span>
+                  <span>Complejidad y escalabilidad</span>
+                </summary>
+                <div class="summary-card__body">
+                  <ul>
+                    <li>Los datos se duplican cada 12 meses, mientras la capacidad de procesamiento lo hace cada 18 meses; una sola máquina termina siendo insuficiente.</li>
+                    <li>La complejidad se mide contando operaciones en función del tamaño del problema y expresando el coste como T(n), no solo en segundos.</li>
+                    <li>La burbuja tiene coste O(n²). Cuando n es enorme domina el término que más crece, y el crecimiento exponencial acaba superando a cualquier polinomio.</li>
+                    <li>En el ejemplo RSA, un año permite factorizar una clave de 2¹⁷ cifras; duplicar la velocidad solo eleva el límite a 2²², es decir, cinco cifras más.</li>
+                    <li>El escalado horizontal añade nodos interconectados: divide el problema, procesa en paralelo y combina resultados, como en MapReduce.</li>
+                    <li>El documento presenta Parquet, Avro y ORC como formatos optimizados. El Data Warehouse usa esquema en escritura; el Data Lake conserva formatos originales y usa esquema en lectura; el Data Mart es un subconjunto especializado.</li>
+                  </ul>
+                </div>
+              </details>
+
+              <details class="summary-card">
+                <summary>
+                  <span class="summary-card__number">03</span>
+                  <span>MapReduce y procesamiento distribuido</span>
+                </summary>
+                <div class="summary-card__body">
+                  <ul>
+                    <li>Map genera pares clave-valor, Shuffle agrupa y transporta claves iguales y Reduce combina o agrega valores.</li>
+                    <li>La clave identifica el grupo al que pertenece cada dato; el valor puede contener distintos tipos de información.</li>
+                    <li>Para una media distribuida, cada nodo calcula suma y conteo; Reduce suma ambos totales antes de dividir, sin promediar medias parciales.</li>
+                    <li>Shuffle es la fase que principalmente mueve datos por la red. Con 1 TB entre 20 nodos, cada nodo lee 50.000 MB: 250 segundos desde disco a 200 MB/s y 5 segundos desde RAM a 10.000 MB/s.</li>
+                    <li>HDFS almacena y MapReduce procesa. Hadoop escribe y lee intermedios en disco; Spark los mantiene en memoria, salvo desbordamiento, y admite batch y streaming.</li>
+                    <li>El Driver convierte el código en tareas, los Executors procesan particiones y el gestor asigna recursos. Databricks es la plataforma que rodea al motor Spark.</li>
+                  </ul>
+                </div>
+              </details>
+
+              <details class="summary-card">
+                <summary>
+                  <span class="summary-card__number">04</span>
+                  <span>Del dato bruto al dato útil: PySpark</span>
+                </summary>
+                <div class="summary-card__body">
+                  <ul>
+                    <li>TPV, comercio electrónico, redes sociales y reseñas presentan formatos incompatibles, duplicados, ruido y actualizaciones lentas.</li>
+                    <li>ETL extrae, transforma y carga. ELT extrae, carga y transforma después en el destino, aprovechando su capacidad distribuida o cloud.</li>
+                    <li>La carga completa reemplaza todos los datos y es más sencilla; la incremental incorpora registros nuevos o modificados y resulta más eficiente, aunque más compleja.</li>
+                    <li>Batch trabaja con lotes; streaming permite resultados parciales sin esperar todos los datos; tiempo real añade un plazo obligatorio y prohíbe perder datos.</li>
+                    <li>La latencia es el tiempo entre generar un dato y obtener su resultado. Spark implementa streaming mediante microbatches.</li>
+                    <li>Lambda combina batch histórico, speed de baja latencia y serving. Kappa usa un único flujo continuo y reprocesa el histórico reproduciendo eventos; simplifica la lógica, pero exige conservarlos.</li>
+                  </ul>
+                </div>
+              </details>
+
+              <details class="summary-card">
+                <summary>
+                  <span class="summary-card__number">05</span>
+                  <span>Calidad del dato y gobernanza</span>
+                </summary>
+                <div class="summary-card__body">
+                  <ul>
+                    <li>El caso inicial muestra un pedido entregado antes de salir del almacén, con retraso 0.0; permite analizar el error, su efecto en la media y dónde detectarlo en el ETL.</li>
+                    <li>La gobernanza establece políticas, procesos y roles para garantizar disponibilidad, integridad, seguridad y cumplimiento normativo; sin ella, un Data Lake puede convertirse en un data swamp.</li>
+                    <li>El propietario responde del valor y las decisiones; el custodio, del almacenamiento, la calidad y la seguridad; el analista o usuario obtiene valor del dato.</li>
+                    <li>Las dimensiones de calidad son completitud, unicidad, consistencia, exactitud o precisión y actualización. Los metadatos describen los datos y el linaje registra su recorrido.</li>
+                    <li>Los controles usan métricas y alertas. En FL Logistics se propone un mínimo del 98 % con fecha de entrega informada o un descarte máximo del 2 %.</li>
+                    <li>La misión limpia 153.000 pedidos en este orden: duplicados, texto, entregados sin retraso y valores imposibles; después los guarda en Parquet y comprueba las filas.</li>
+                  </ul>
+                </div>
+              </details>
+            </div>
+          </section>
+
+          <section class="quiz" id="test" aria-labelledby="test-titulo">
+            <div class="section-heading">
+              <p class="eyebrow">100 preguntas · 20 por tema</p>
+              <h2 id="test-titulo">Test de repaso</h2>
+              <p>Elige una respuesta, compruébala y continúa. Puedes practicar un tema concreto o hacer el test completo.</p>
+            </div>
+
+            <div class="quiz__toolbar">
+              <label for="filtro-tema">Tema</label>
+              <select id="filtro-tema">
+                <option value="todos">Todos los temas</option>
+                <option value="0">1 · Introducción a Big Data</option>
+                <option value="1">2 · Complejidad y escalabilidad</option>
+                <option value="2">3 · MapReduce</option>
+                <option value="3">4 · Del dato bruto al dato útil</option>
+                <option value="4">5 · Calidad y gobernanza</option>
+              </select>
+              <p id="progreso-test" class="quiz__progress"></p>
+            </div>
+
+            <p id="puntuacion-test" class="quiz__score" role="status" aria-live="polite"></p>
+
+            <form id="formulario-test" class="quiz__form">
+              <fieldset class="quiz__fieldset">
+                <legend id="pregunta-test"></legend>
+                <p id="tema-pregunta" class="quiz__topic"></p>
+                <div id="opciones-test" class="quiz__options"></div>
+              </fieldset>
+              <p id="feedback-test" class="quiz__feedback" role="status" aria-live="polite"></p>
+              <div class="quiz__actions">
+                <button class="button button--secondary" id="anterior-test" type="button">Anterior</button>
+                <button class="button" id="comprobar-test" type="button">Comprobar</button>
+                <button class="button button--secondary" id="siguiente-test" type="button">Siguiente</button>
+              </div>
+            </form>
+
+            <button class="button button--secondary" id="reiniciar-test" type="button">Reiniciar test</button>
+            <noscript><p class="quiz__feedback">Activa JavaScript para responder y corregir el test.</p></noscript>
+          </section>
         </div>
       </div>
     </section>
@@ -70,5 +206,6 @@
       <a class="footer-link" href="https://github.com/Pausiar/Especializaci-n-IA-y-BigData">Ver el repositorio</a>
     </div>
   </footer>
+  <script src="test.js"></script>
 </body>
 </html>
